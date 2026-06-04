@@ -7,12 +7,12 @@ const items = [
   { label: 'Fűtésszerelés', sub: 'Padlófűtés kiépítése', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088400-1024x1024.jpg' },
   { label: 'Csőszerelés', sub: 'Vízelosztó rendszer', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088413-Nagy-1024x1024.jpeg' },
   { label: 'Fürdőszoba', sub: 'Teljes felújítás', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088465-1024x1024.jpg' },
-  { label: 'Kazáncsere', sub: 'Modern kondenzációs', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088427-1024x1024.jpg' },
-  { label: 'Gázszerelés', sub: 'Gázvezeték kiépítés', img: 'http://somogyitherm.hu/wp-content/uploads/2022/08/2022-07-09-1.jpg' },
-  { label: 'Padlófűtés', sub: 'Csőhálózat fektetés', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088446-1024x1024.jpg' },
+  { label: 'Kazáncsere', sub: 'Modern kondenzációs', img: '/assets/Kazáncsere.webp' },
+  { label: 'Gázszerelés', sub: 'Gázvezeték kiépítés', img: '/assets/Gázszerelés.jpg' },
+  { label: 'Padlófűtés', sub: 'Csőhálózat fektetés', img: '/assets/Padlófűtés.webp' },
   { label: 'Radiátor', sub: 'Csere és beállítás', img: 'http://somogyitherm.hu/wp-content/uploads/2023/04/1681056716113-1.jpg' },
   { label: 'Csőtörés', sub: 'Gyors javítás', img: 'http://somogyitherm.hu/wp-content/uploads/2022/08/20220702_084839_HDR.jpg' },
-  { label: 'Felújítás', sub: 'Komplex projekt', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088381-1024x1024.jpg' },
+  { label: 'Felújítás', sub: 'Komplex projekt', img: '/assets/Felújítás.jpg' },
 ]
 
 export default function Gallery() {
