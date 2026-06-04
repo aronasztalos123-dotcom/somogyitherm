@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1628;
+  --orange: #e8612c;
+  --cream: #f8f4ef;
+  --font-display: 'Bebas Neue';
+  --font-body: 'DM Sans';
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: #ffffff;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display), Impact, sans-serif;
+  }
+
+  .section-label {
+    @apply text-orange font-semibold text-xs tracking-[0.2em] uppercase;
+  }
+
+  .section-title {
+    font-family: var(--font-display), Impact, sans-serif;
+    @apply text-6xl md:text-8xl uppercase leading-none;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 bg-orange hover:bg-orange-dark text-white px-8 py-4 font-semibold transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2.5 border border-white/25 hover:border-white/50 text-white px-8 py-4 font-semibold transition-all duration-200 hover:bg-white/5;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
