@@ -4,31 +4,15 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const items = [
-  { label: 'Fűtésszerelés', sub: 'Padlófűtés kiépítése', large: true },
-  { label: 'Csőszerelés', sub: 'Vízelosztó rendszer', large: false },
-  { label: 'Fürdőszoba', sub: 'Teljes felújítás', large: false },
-  { label: 'Kazáncsere', sub: 'Modern kondenzációs', large: false },
-  { label: 'Gázszerelés', sub: 'Gázvezeték kiépítés', large: false },
-  { label: 'Padlófűtés', sub: 'Asztalt fektetés', large: false },
-  { label: 'Radiátor', sub: 'Csere és beállítás', large: false },
-  { label: 'Csőtörés', sub: 'Gyors javítás', large: false },
-  { label: 'Felújítás', sub: 'Komplex projekt', large: false },
-]
-
-const pipeIcons = [
-  <svg key="a" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full p-10 opacity-20">
-    <path d="M8 32h48M32 8v48M16 16l32 32M48 16L16 48" />
-    <circle cx="32" cy="32" r="8" />
-  </svg>,
-  <svg key="b" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full p-10 opacity-20">
-    <path d="M8 20h20v24h8V20h20M8 44h48" />
-    <circle cx="32" cy="32" r="4" />
-  </svg>,
-  <svg key="c" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full p-10 opacity-20">
-    <rect x="12" y="12" width="40" height="40" rx="4" />
-    <path d="M12 32h40M32 12v40" />
-    <circle cx="32" cy="32" r="6" />
-  </svg>,
+  { label: 'Fűtésszerelés', sub: 'Padlófűtés kiépítése', img: 'http://somogyitherm.hu/wp-content/uploads/2022/08/20220702_084839_HDR.jpg' },
+  { label: 'Csőszerelés', sub: 'Vízelosztó rendszer', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088413-Nagy-1024x1024.jpeg' },
+  { label: 'Fürdőszoba', sub: 'Teljes felújítás', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088381-1024x1024.jpg' },
+  { label: 'Kazáncsere', sub: 'Modern kondenzációs', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088427-1024x1024.jpg' },
+  { label: 'Gázszerelés', sub: 'Gázvezeték kiépítés', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088465-1024x1024.jpg' },
+  { label: 'Padlófűtés', sub: 'Csőhálózat fektetés', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088446-1024x1024.jpg' },
+  { label: 'Radiátor', sub: 'Csere és beállítás', img: 'http://somogyitherm.hu/wp-content/uploads/2023/04/1681056716113-1.jpg' },
+  { label: 'Csőtörés', sub: 'Gyors javítás', img: 'http://somogyitherm.hu/wp-content/uploads/2022/10/1667148088400-1024x1024.jpg' },
+  { label: 'Felújítás', sub: 'Komplex projekt', img: 'http://somogyitherm.hu/wp-content/uploads/2022/08/2022-07-09-1.jpg' },
 ]
 
 export default function Gallery() {
@@ -84,20 +68,14 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.06 + 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative aspect-square overflow-hidden cursor-pointer"
-              style={{
-                background: `linear-gradient(135deg, #0a1628 0%, ${
-                  i % 3 === 0 ? '#162542' : i % 3 === 1 ? '#0f2040' : '#1a2d50'
-                } 100%)`,
-              }}
+              className="group relative aspect-square overflow-hidden cursor-pointer bg-navy-light"
             >
-              {/* Icon pattern */}
-              <div className="absolute inset-0 text-white/10">
-                {pipeIcons[i % pipeIcons.length]}
-              </div>
-
-              {/* Orange dot accent */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-orange rounded-full opacity-60" />
+              {/* Real photo */}
+              <img
+                src={item.img}
+                alt={item.label}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
 
               {/* Bottom progress bar on hover */}
               <div className="absolute bottom-0 left-0 h-0.5 bg-orange w-0 group-hover:w-full transition-all duration-500" />
